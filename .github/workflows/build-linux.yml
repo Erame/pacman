@@ -13,6 +13,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: git submodules
+        run: git sumbodule update --init --recursive
+
       - name: cmake init
         run: |
           mkdir -p build
