@@ -1,0 +1,30 @@
+name: build-linux
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: cmake init
+        run: |
+          mkdir -p build
+          cd build
+          cmake ..
+      
+      - name: cmake build
+        run: |
+          cd build
+          cmake --build .
+
+      - name: run
+        run: |
+          cd build/Debug
+          ./pacman.exe
