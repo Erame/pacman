@@ -15,7 +15,8 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
 enable_testing()
 
 add_subdirectory(${CMAKE_SOURCE_DIR}/third_party/googletest)
-add_subdirectory(${CMAKE_SOURCE_DIR}/tests)
+
+file(GLOB test_srcs ${CMAKE_SOURCE_DIR}/tests/*.cpp)
 
 foreach(test_src ${test_srcs})
     get_filename_component(test_name ${test_src} NAME_WE)
