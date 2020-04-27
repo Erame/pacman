@@ -14,6 +14,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
 
 enable_testing()
 
+set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 add_subdirectory(${CMAKE_SOURCE_DIR}/third_party/googletest)
 
 file(GLOB test_srcs ${CMAKE_SOURCE_DIR}/tests/*.cpp)
