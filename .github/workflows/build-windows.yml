@@ -25,6 +25,6 @@ jobs:
           cmake --build .
       
       - name: run
-        runs: |
+        run: |
           cd build
           ./Debug/pacman.exe
