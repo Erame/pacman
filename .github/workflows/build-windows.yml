@@ -24,7 +24,12 @@ jobs:
           cd build
           cmake --build .
       
-      - name: run
+      # - name: run
+      #   run: |
+      #     cd build
+      #     ./Debug/pacman.exe
+
+      - name: test
         run: |
           cd build
-          ./Debug/pacman.exe
+          ctest
