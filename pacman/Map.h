@@ -1,5 +1,6 @@
 #pragma once
 
+#include <iostream>
 #include <vector>
 
 #include "Block.h"
@@ -11,11 +12,13 @@ class Map {
   size_t _height;
   size_t _width;
 
-  void _init(int height, int width);
+  void _init(const int height, const int width, const Block b = Block::wall);
 
 public:
   Map() = delete;
   Map(int height, int width) { _init(height, width); }
+
+  void print() const;
 };
 
 } // namespace pacman
