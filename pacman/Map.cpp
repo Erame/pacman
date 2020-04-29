@@ -10,7 +10,7 @@ void Map::_init(const int height, const int width, const Block b) {
 void Map::print() const {
   for (const auto &v : _map) {
     for (size_t i = 0; i < v.size(); i++) {
-      std::cout << v[i];
+      std::cout << v[i] << " ";
     }
     std::cout << std::endl;
   }
