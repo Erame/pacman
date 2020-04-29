@@ -1,10 +1,11 @@
 #include "Map.h"
 
 namespace pacman {
-void Map::_init(const int height, const int width, const Block b) {
-  _map = std::vector<std::vector<Block>>(height, std::vector<Block>(width, b));
-  _height = height;
-  _width = width;
+
+Map::Map(int height, int width) : _height(height), _width(width) {
+  std::shared_ptr<MapGenerator> map_gen =
+      std::make_shared<MapGenDFS>(height, width);
+  _map = map_gen->generate();
 }
 
 void Map::print() const {
