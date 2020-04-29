@@ -2,7 +2,9 @@
 
 #include "Map.h"
 
-TEST(test_map, print) {
+TEST(map, print) {
+  ASSERT_NO_THROW({
     auto map = pacman::Map(3, 5);
     map.print();
+  });
 }
