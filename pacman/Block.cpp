@@ -6,7 +6,7 @@ std::ostream &operator<<(std::ostream &os, const pacman::Block b) {
     os << "\u25A0";
     break;
   case pacman::Block::empty:
-    os << ' ';
+    os << "\u25A1";
     break;
   default:
     break;
