@@ -11,7 +11,7 @@ int main() {
             << "major " << VERSION_MAJOR << std::endl
             << "minor " << VERSION_MINOR << std::endl;
 
-  auto map = pacman::Map(3, 5);
+  auto map = pacman::Map(50, 50);
   map.print();
 
   return 0;

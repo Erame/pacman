@@ -3,7 +3,7 @@
 std::ostream &operator<<(std::ostream &os, const pacman::Block b) {
   switch (b) {
   case pacman::Block::wall:
-    os << '@';
+    os << "\u25A0";
     break;
   case pacman::Block::empty:
     os << ' ';
