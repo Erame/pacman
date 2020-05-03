@@ -23,12 +23,11 @@ inline const utils::Block &Map::operator()(int i, int j) const {
   return _map[i][j];
 }
 
-inline utils::Block &Map::operator()(const std::pair<int, int> &pr) {
-  return _map[pr.first][pr.second];
+inline utils::Block &Map::operator()(const std::pair<int, int> &p) {
+  return _map[p.first][p.second];
 }
-inline const utils::Block &
-Map::operator()(const std::pair<int, int> &pr) const {
-  return _map[pr.first][pr.second];
+inline const utils::Block &Map::operator()(const std::pair<int, int> &p) const {
+  return _map[p.first][p.second];
 }
 
 } // namespace map
