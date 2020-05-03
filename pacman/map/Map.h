@@ -4,8 +4,8 @@
 #include <memory>
 #include <vector>
 
-#include "Block.h"
 #include "MapGenDFS.h"
+#include "utils/Block.h"
 
 namespace pacman {
 

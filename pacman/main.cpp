@@ -2,8 +2,8 @@
 
 #include "config.h"
 
-#include "Map.h"
-#include "RNG.h"
+#include "map/Map.h"
+#include "utils/RNG.h"
 
 int main() {
   printf("hello world\n");

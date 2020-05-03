@@ -1,6 +1,6 @@
 #include "gtest/gtest.h"
 
-#include "Map.h"
+#include "map/Map.h"
 
 TEST(map, print) {
   ASSERT_NO_THROW({

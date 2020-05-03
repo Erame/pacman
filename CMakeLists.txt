@@ -19,6 +19,7 @@ file(GLOB_RECURSE pacman_src
     "pacman/*.hpp"
     "pacman/*.h"
 )
+include_directories(${CMAKE_SOURCE_DIR}/pacman)
 list(REMOVE_ITEM pacman_src ${CMAKE_SOURCE_DIR}/pacman/main.cpp)
 
 # build pacman lib

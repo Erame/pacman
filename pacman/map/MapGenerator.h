@@ -2,7 +2,7 @@
 
 #include <vector>
 
-#include "Block.h"
+#include "utils/Block.h"
 
 namespace pacman {
 

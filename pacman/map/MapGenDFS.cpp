@@ -4,7 +4,7 @@
 #include <utility>
 
 #include "MapGenDFS.h"
-#include "RNG.h"
+#include "utils/RNG.h"
 
 namespace pacman {
 

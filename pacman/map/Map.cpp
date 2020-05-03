@@ -16,4 +16,5 @@ void Map::print() const {
     std::cout << std::endl;
   }
 }
+
 } // namespace pacman
