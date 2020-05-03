@@ -23,6 +23,9 @@ public:
   utils::Block &operator()(const std::pair<int, int> &point);
   const utils::Block &operator()(const std::pair<int, int> &point) const;
 
+  size_t height() const { return _height; }
+  size_t width() const { return _width; }
+
   const std::pair<int, int> &entrance() { return _entrance; };
   const std::pair<int, int> &exit() { return _exit; };
 
