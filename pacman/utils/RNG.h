@@ -8,6 +8,7 @@ namespace pacman {
 
 class RNG {
   using Engine = std::mt19937_64;
+
 public:
   static const RNG &get();
   static void manual_seed(unsigned int seed);
