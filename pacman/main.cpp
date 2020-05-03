@@ -3,6 +3,7 @@
 #include "config.h"
 
 #include "map/Map.h"
+#include "pacman/Pacman.h"
 #include "utils/RNG.h"
 
 int main() {
@@ -14,11 +15,18 @@ int main() {
 
   // pacman::utils::RNG::manual_seed(42);
 
+  auto &rng = pacman::utils::RNG::get();
+  std::cout << rng.frand() << std::endl;
+
   auto map = pacman::map::Map(20, 20);
   map.print();
 
-  auto &rng = pacman::utils::RNG::get();
-  std::cout << rng.frand() << std::endl;
+  auto pm = pacman::pacman::Pacman(map);
+  pm.solve();
+
+  std::cout << std::endl;
+
+  map.print();
 
   return 0;
 }
