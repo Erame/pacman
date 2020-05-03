@@ -16,6 +16,9 @@ class Map {
   const size_t _width;
 
 public:
+  utils::Block &operator()(int i, int j);
+  const utils::Block &operator()(int i, int j) const;
+
   Map() = delete;
   Map(int height, int width);
 

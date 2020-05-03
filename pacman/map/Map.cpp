@@ -18,5 +18,9 @@ void Map::print() const {
   }
 }
 
+utils::Block &Map::operator()(int i, int j) { return _map[i][j]; }
+
+const utils::Block &Map::operator()(int i, int j) const { return _map[i][j]; }
+
 } // namespace map
 } // namespace pacman

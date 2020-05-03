@@ -5,7 +5,7 @@
 namespace pacman {
 namespace utils {
 
-enum Block { wall, empty, entrance, exit };
+enum Block { wall, empty, entrance, exit, path };
 
 } // namespace utils
 } // namespace pacman
