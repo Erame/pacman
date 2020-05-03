@@ -18,9 +18,18 @@ void Map::print() const {
   }
 }
 
-utils::Block &Map::operator()(int i, int j) { return _map[i][j]; }
+inline utils::Block &Map::operator()(int i, int j) { return _map[i][j]; }
+inline const utils::Block &Map::operator()(int i, int j) const {
+  return _map[i][j];
+}
 
-const utils::Block &Map::operator()(int i, int j) const { return _map[i][j]; }
+inline utils::Block &Map::operator()(const std::pair<int, int> &pr) {
+  return _map[pr.first][pr.second];
+}
+inline const utils::Block &
+Map::operator()(const std::pair<int, int> &pr) const {
+  return _map[pr.first][pr.second];
+}
 
 } // namespace map
 } // namespace pacman
