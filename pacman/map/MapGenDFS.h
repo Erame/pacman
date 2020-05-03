@@ -10,9 +10,14 @@ struct MapGenDFS : public MapGenerator {
   std::vector<std::vector<utils::Block>> _map;
   bool found_exit = false;
 
+  std::pair<int, int> _entrance;
+  std::pair<int, int> _exit;
+
   inline bool is_breakable(const std::pair<int, int> &point);
 
-  std::vector<std::vector<utils::Block>> generate();
+  std::tuple<std::vector<std::vector<utils::Block>>, std::pair<int, int>,
+             std::pair<int, int>>
+  generate() override;
 
   MapGenDFS(int height, int width) : MapGenerator(height, width) {}
   MapGenDFS() = delete;

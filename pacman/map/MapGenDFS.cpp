@@ -1,6 +1,7 @@
 #include <algorithm>
 #include <random>
 #include <stack>
+#include <tuple>
 #include <utility>
 
 #include "MapGenDFS.h"
@@ -20,6 +21,7 @@ inline bool MapGenDFS::is_breakable(const Point &point) {
 
   if (!found_exit && (i == _height - 1 || j == _width - 1)) {
     found_exit = true;
+    _exit = {i, j};
     return true;
   }
   if (i <= 0 || j <= 0 || i >= _height - 1 || j >= _width - 1)
@@ -33,11 +35,15 @@ inline bool MapGenDFS::is_breakable(const Point &point) {
   return a > 2;
 }
 
-Vec2 MapGenDFS::generate() {
+std::tuple<std::vector<std::vector<utils::Block>>, std::pair<int, int>,
+           std::pair<int, int>>
+MapGenDFS::generate() {
   found_exit = false;
   _map = Vec2(_height, Vec1(_width, Block::wall));
 
-  Point start = {0, 1};
+  _entrance = {0, 1};
+
+  Point start = _entrance;
   _map[start.first][start.second] = Block::empty;
 
   auto st = std::stack<Point>();
@@ -66,7 +72,9 @@ Vec2 MapGenDFS::generate() {
     }
   }
 
-  return std::move(_map);
+  _map[_entrance.first][_entrance.second] = Block::entrance;
+  _map[_exit.first][_exit.second] = Block::exit;
+  return std::make_tuple(std::move(_map), _entrance, _exit);
 }
 
 } // namespace map

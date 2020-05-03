@@ -8,7 +8,9 @@ namespace pacman {
 namespace map {
 
 struct MapGenerator {
-  virtual std::vector<std::vector<utils::Block>> generate() = 0;
+  virtual std::tuple<std::vector<std::vector<utils::Block>>,
+                     std::pair<int, int>, std::pair<int, int>>
+  generate() = 0;
 
   const int _height;
   const int _width;

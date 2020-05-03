@@ -6,7 +6,7 @@ namespace map {
 Map::Map(int height, int width) : _height(height), _width(width) {
   std::shared_ptr<MapGenerator> map_gen =
       std::make_shared<MapGenDFS>(height, width);
-  _map = map_gen->generate();
+  std::tie(_map, _entrance, _exit) = map_gen->generate();
 }
 
 void Map::print() const {

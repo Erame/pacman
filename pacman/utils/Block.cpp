@@ -30,6 +30,8 @@ std::ostream &operator<<(std::ostream &os, const Block b) {
     os << "\u25A1";
     break;
   case Block::path:
+  case Block::entrance:
+  case Block::exit:
     os << MAGENTA << "\u25A0" << RESET;
   default:
     break;

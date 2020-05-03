@@ -14,6 +14,7 @@ class Map {
   std::vector<std::vector<utils::Block>> _map;
   const size_t _height;
   const size_t _width;
+  std::pair<int, int> _entrance, _exit;
 
 public:
   utils::Block &operator()(int i, int j);
