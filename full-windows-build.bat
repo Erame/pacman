@@ -1,3 +1,4 @@
+python clang-format.py -r pacman/ tests/
 rmdir /s /q build
 mkdir build
 cd build

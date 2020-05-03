@@ -2,6 +2,7 @@
 
 set -e
 
+python clang-format.py -r pacman/ tests/
 rm -rf build/
 mkdir -p build
 cd build
