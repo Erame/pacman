@@ -39,9 +39,6 @@ struct MapGenDFS : public MapGenerator {
   }
 
   Vec2 generate() {
-    std::random_device rd;
-    std::mt19937_64 g(rd());
-
     found_exit = false;
     _map = Vec2(_height, Vec1(_width, Block::wall));
 
@@ -64,7 +61,7 @@ struct MapGenDFS : public MapGenerator {
         continue;
       }
 
-      std::shuffle(dirs.begin(), dirs.end(), g);
+      std::shuffle(dirs.begin(), dirs.end(), RNG::get_engine());
 
       for (const auto &dir : dirs) {
         int inext = i + dir.first;
