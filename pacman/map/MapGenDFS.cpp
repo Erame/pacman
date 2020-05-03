@@ -19,7 +19,7 @@ bool MapGenDFS::is_breakable(const Point &point) {
   int i = point.first;
   int j = point.second;
 
-  if (!found_exit && (i == _height - 1 || j == _width - 1)) {
+  if (!found_exit && i == _height - 1) {
     found_exit = true;
     _exit = {i, j};
     return true;
