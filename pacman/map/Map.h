@@ -17,11 +17,11 @@ class Map {
   std::pair<int, int> _entrance, _exit;
 
 public:
-  inline utils::Block &operator()(int i, int j);
-  inline const utils::Block &operator()(int i, int j) const;
+  utils::Block &operator()(int i, int j);
+  const utils::Block &operator()(int i, int j) const;
 
-  inline utils::Block &operator()(const std::pair<int, int> &point);
-  inline const utils::Block &operator()(const std::pair<int, int> &point) const;
+  utils::Block &operator()(const std::pair<int, int> &point);
+  const utils::Block &operator()(const std::pair<int, int> &point) const;
 
   const std::pair<int, int> &entrance() { return _entrance; };
   const std::pair<int, int> &exit() { return _exit; };
