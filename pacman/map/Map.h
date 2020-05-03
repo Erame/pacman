@@ -20,6 +20,9 @@ public:
   utils::Block &operator()(int i, int j);
   const utils::Block &operator()(int i, int j) const;
 
+  const std::pair<int, int> &entrance() { return _entrance; };
+  const std::pair<int, int> &exit() { return _exit; };
+
   Map() = delete;
   Map(int height, int width);
 

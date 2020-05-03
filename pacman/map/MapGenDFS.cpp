@@ -15,7 +15,7 @@ using Point = std::pair<int, int>;
 using Vec1 = std::vector<Block>;
 using Vec2 = std::vector<std::vector<Block>>;
 
-inline bool MapGenDFS::is_breakable(const Point &point) {
+bool MapGenDFS::is_breakable(const Point &point) {
   int i = point.first;
   int j = point.second;
 

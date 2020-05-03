@@ -13,7 +13,7 @@ struct MapGenDFS : public MapGenerator {
   std::pair<int, int> _entrance;
   std::pair<int, int> _exit;
 
-  inline bool is_breakable(const std::pair<int, int> &point);
+  bool is_breakable(const std::pair<int, int> &point);
 
   std::tuple<std::vector<std::vector<utils::Block>>, std::pair<int, int>,
              std::pair<int, int>>
