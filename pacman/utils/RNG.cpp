@@ -6,7 +6,7 @@ RNG::RNG() {
   if (!_initialized) {
     _seed = _rd();
   }
-  _engine = std::mt19937_64(_seed);
+  _engine = Engine(_seed);
 
   _initialized = true;
 }
@@ -21,7 +21,7 @@ const RNG &RNG::get() {
   return instance;
 }
 
-RNG::EngineType &RNG::get_engine() {
+RNG::Engine &RNG::get_engine() {
   if (!_initialized) {
     get();
   }
