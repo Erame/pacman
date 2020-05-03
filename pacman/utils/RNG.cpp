@@ -21,7 +21,7 @@ const RNG &RNG::get() {
   return instance;
 }
 
-std::mt19937_64 &RNG::get_engine() {
+RNG::EngineType &RNG::get_engine() {
   if (!_initialized) {
     get();
   }
