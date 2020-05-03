@@ -5,9 +5,10 @@
 #include "utils/Block.h"
 
 namespace pacman {
+namespace map {
 
 struct MapGenerator {
-  virtual std::vector<std::vector<Block>> generate() = 0;
+  virtual std::vector<std::vector<utils::Block>> generate() = 0;
 
   const int _height;
   const int _width;
@@ -15,4 +16,5 @@ struct MapGenerator {
   MapGenerator() = delete;
 };
 
+} // namespace map
 } // namespace pacman

@@ -5,6 +5,7 @@
 // RNG singleton
 
 namespace pacman {
+namespace utils {
 
 class RNG {
   using Engine = std::mt19937_64;
@@ -32,4 +33,5 @@ public:
   void operator=(RNG &&) = delete;
 };
 
+} // namespace utils
 } // namespace pacman

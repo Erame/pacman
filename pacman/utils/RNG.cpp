@@ -1,6 +1,7 @@
 #include "RNG.h"
 
 namespace pacman {
+namespace utils {
 
 RNG::RNG() {
   if (!_initialized) {
@@ -38,4 +39,5 @@ int RNG::randint(int low, int high) const {
   return _gen(_engine);
 }
 
+} // namespace utils
 } // namespace pacman

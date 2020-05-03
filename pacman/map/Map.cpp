@@ -1,6 +1,7 @@
 #include "Map.h"
 
 namespace pacman {
+namespace map {
 
 Map::Map(int height, int width) : _height(height), _width(width) {
   std::shared_ptr<MapGenerator> map_gen =
@@ -17,4 +18,5 @@ void Map::print() const {
   }
 }
 
+} // namespace map
 } // namespace pacman

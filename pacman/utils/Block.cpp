@@ -1,11 +1,13 @@
 #include "Block.h"
 
-std::ostream &operator<<(std::ostream &os, const pacman::Block b) {
+using Block = pacman::utils::Block;
+
+std::ostream &operator<<(std::ostream &os, const Block b) {
   switch (b) {
-  case pacman::Block::wall:
+  case Block::wall:
     os << "\u25A0";
     break;
-  case pacman::Block::empty:
+  case Block::empty:
     os << "\u25A1";
     break;
   default:

@@ -8,9 +8,10 @@
 #include "utils/Block.h"
 
 namespace pacman {
+namespace map {
 
 class Map {
-  std::vector<std::vector<Block>> _map;
+  std::vector<std::vector<utils::Block>> _map;
   const size_t _height;
   const size_t _width;
 
@@ -21,4 +22,5 @@ public:
   void print() const;
 };
 
+} // namespace map
 } // namespace pacman

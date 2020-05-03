@@ -4,7 +4,7 @@
 
 TEST(map, print) {
   ASSERT_NO_THROW({
-    auto map = pacman::Map(3, 5);
+    auto map = pacman::map::Map(3, 5);
     map.print();
   });
 }

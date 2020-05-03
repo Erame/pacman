@@ -12,12 +12,12 @@ int main() {
             << "major " << VERSION_MAJOR << std::endl
             << "minor " << VERSION_MINOR << std::endl;
 
-  pacman::RNG::manual_seed(42);
+  pacman::utils::RNG::manual_seed(42);
 
-  auto map = pacman::Map(50, 50);
+  auto map = pacman::map::Map(50, 50);
   map.print();
 
-  auto &rng = pacman::RNG::get();
+  auto &rng = pacman::utils::RNG::get();
   std::cout << rng.frand() << std::endl;
 
   return 0;

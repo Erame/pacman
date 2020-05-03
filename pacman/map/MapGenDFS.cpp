@@ -7,7 +7,9 @@
 #include "utils/RNG.h"
 
 namespace pacman {
+namespace map {
 
+using Block = utils::Block;
 using Point = std::pair<int, int>;
 using Vec1 = std::vector<Block>;
 using Vec2 = std::vector<std::vector<Block>>;
@@ -54,7 +56,7 @@ Vec2 MapGenDFS::generate() {
       continue;
     }
 
-    std::shuffle(dirs.begin(), dirs.end(), RNG::get_engine());
+    std::shuffle(dirs.begin(), dirs.end(), utils::RNG::get_engine());
 
     for (const auto &dir : dirs) {
       int inext = i + dir.first;
@@ -67,4 +69,5 @@ Vec2 MapGenDFS::generate() {
   return std::move(_map);
 }
 
+} // namespace map
 } // namespace pacman

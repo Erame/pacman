@@ -3,7 +3,11 @@
 #include <iostream>
 
 namespace pacman {
-enum Block { wall, empty, entrance, exit };
-}
+namespace utils {
 
-std::ostream &operator<<(std::ostream &os, const pacman::Block b);
+enum Block { wall, empty, entrance, exit };
+
+} // namespace utils
+} // namespace pacman
+
+std::ostream &operator<<(std::ostream &os, const pacman::utils::Block b);
