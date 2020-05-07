@@ -5,6 +5,8 @@
 namespace pacman {
 namespace pacman {
 
+enum MazeSolverAlgs { DFS, Dijkstra };
+
 struct MazeSolver {
   map::Map &_map;
 

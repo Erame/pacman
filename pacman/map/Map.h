@@ -29,6 +29,9 @@ public:
   const std::pair<int, int> &entrance() { return _entrance; };
   const std::pair<int, int> &exit() { return _exit; };
 
+  void clear();
+  int path_count() const;
+
   Map() = delete;
   Map(int height, int width);
 

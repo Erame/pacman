@@ -3,6 +3,8 @@
 namespace pacman {
 namespace map {
 
+using Block = pacman::utils::Block;
+
 Map::Map(int height, int width) : _height(height), _width(width) {
   std::shared_ptr<MapGenerator> map_gen =
       std::make_shared<MapGenDFS>(height, width);
@@ -16,6 +18,28 @@ void Map::print() const {
     }
     std::cout << std::endl;
   }
+  std::cout << std::endl;
+}
+
+void Map::clear() {
+  for (int i = 0; i < _height; i++) {
+    for (int j = 0; j < _width; j++) {
+      if (_map[i][j] == Block::path) {
+        _map[i][j] = Block::empty;
+      }
+    }
+  }
+}
+
+int Map::path_count() const {
+  int res = 0;
+  for (int i = 0; i < _height; i++) {
+    for (int j = 0; j < _width; j++) {
+      if (_map[i][j] == Block::path)
+        res++;
+    }
+  }
+  return res;
 }
 
 utils::Block &Map::operator()(int i, int j) { return _map[i][j]; }
